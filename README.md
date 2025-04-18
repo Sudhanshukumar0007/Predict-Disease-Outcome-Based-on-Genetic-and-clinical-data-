@@ -1,64 +1,59 @@
 # Predict-Disease-Outcome-Based-on-Genetic-and-clinical-data-
-🔍 Project Title:
-Predict-Disease-Outcome-Based-on-Genetic-and-clinical-data-
 
-📌 Objective:
-To build a machine learning model that can predict whether a breast tumor is malignant or benign using clinical data and features derived from digitized images of breast mass.
+# 🧠 Breast Cancer Prediction using Logistic Regression
 
-📊 Dataset:
-Source: Wisconsin Diagnostic Breast Cancer (WDBC) dataset
+## 📌 Problem Statement
 
-Features: 30 numerical attributes (mean, standard error, and "worst" of cell nucleus features like radius, texture, perimeter, area, smoothness, etc.)
+Breast cancer is one of the most common types of cancer among women worldwide. Early detection and accurate diagnosis are critical to improving survival rates. The goal of this project is to build a machine learning model that can **classify tumors as either malignant or benign** based on various features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.
 
-Target: Diagnosis — Malignant (1) or Benign (0)
+## 🧪 Dataset
 
-⚙️ Methodology:
-Data Preprocessing:
+The dataset used is the **Breast Cancer Wisconsin (Diagnostic) Dataset**, which contains 569 samples with 30 numeric features related to characteristics of the cell nuclei present in the image. The target variable is:
+- `M` = Malignant (1)
+- `B` = Benign (0)
 
-Removed unnecessary columns like id.
+## ⚙️ Methodology
 
-Encoded categorical labels: 'M' → 1 (Malignant) and 'B' → 0 (Benign).
+1. **Data Preprocessing**
+   - Removed irrelevant columns like `id` and `Unnamed: 32`
+   - Encoded the diagnosis column into binary format (0 for benign, 1 for malignant)
+   - Normalized feature data using `StandardScaler` to bring all features onto a similar scale
+   - Split the dataset into training and testing sets using `train_test_split` (80/20 split)
 
-Scaled features using StandardScaler to normalize the input data for the model.
+2. **Modeling**
+   - Used **Logistic Regression**, a linear model for binary classification
+   - Trained the model on the training set and tested on the unseen test data
 
-Train-Test Split:
+3. **Evaluation**
+   - Evaluated the model using:
+     - **Accuracy Score**
+     - **Classification Report** (Precision, Recall, F1-Score)
+     - **Confusion Matrix** (visualized with Seaborn)
 
-Used train_test_split() to divide the data: 80% for training, 20% for testing.
+## 📊 Results
 
-Model:
+- The Logistic Regression model performed well on the test data.
+- **Accuracy:** 96.49%
+- The confusion matrix showed that the model was able to correctly classify the majority of benign and malignant cases.
+- Precision and recall values were also high, indicating good performance across both classes.
 
-Used Logistic Regression, a simple and effective linear classification algorithm.
+![Screenshot 2025-04-18 145025](https://github.com/user-attachments/assets/2b48ec6f-ad88-4ff7-81ce-541e395745a1)
 
-Trained on the training data and evaluated on the test data.
 
-Evaluation Metrics:
+---
 
-Accuracy
+## 💡 Future Work
 
-Classification Report (Precision, Recall, F1-score)
+- Implement a Neural Network (Multi-layer Perceptron) and compare performance
+- Use cross-validation and hyperparameter tuning
+- Experiment with other algorithms like SVM, Random Forest, and Gradient Boosting
 
-Confusion Matrix
+## 🛠️ Tech Stack
 
-Visualization of Confusion Matrix using a heatmap
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Seaborn & Matplotlib
 
-📈 Results:
-The model achieved high accuracy on the test data.
-
-The confusion matrix and classification report show that it correctly identifies most malignant and benign cases.
-
-Suitable for medical screening support, although not a substitute for clinical diagnosis.
-
-🧠 Why Logistic Regression?
-Interpretable and efficient.
-
-Good baseline model for binary classification problems.
-
-Performs well when the classes are linearly separable, as in this case.
-
-📦 Tools & Libraries:
-pandas, numpy for data handling
-
-matplotlib, seaborn for visualization
-
-scikit-learn for preprocessing, model training, and evaluation
 
